@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <link rel="stylesheet" href="style.css" />
+    <title>Javascript Todo-list App</title>
+
+  </head>
+  <body>
+
+
+    <!--Wrapper div section is just to create the outer box /boundary for the UI.-->
+    <!--This is centered in the page dure to the flex property we have used -->
+    <div class="mainbox">  
+
+    <!--Screen backdrop is used for creating the half circular background for UI-->
+     
+
+
+      <div class="homeScreen">
+        <div class="homescreen-bg"></div>
+        
+        <div class="homeScreenHeader">
+
+              <img src="menu-line.png" width="30px;" style="cursor: pointer;" id="menuBtnHome">
+              
+              <div class="headContentSection">
+                  <div>
+                    <h2>Hello Yashika</h2>
+                    <p>Today you have <span class="totalTasks">5</span> tasks</p>
+                  </div>
+                                   
+                  <img src="boy.png" style="width: 70px;">
+              </div>
+        </div>
+
+
+
+
+
+
+
+
+          <div class="categoriesSection">
+            
+            <div class="category">
+
+              <div class="leftPart">
+                  <img src="boy.png" style="width: 50px;">
+
+                  <div>
+                    <h2>Personal</h2>
+                    <p>5 Tasks</p>
+                  </div> 
+              </div>
+
+              <img src="menuVertical.png" width="42px;" height="38px" style="cursor:pointer;">
+
+            </div>
+
+            
+
+            
+          </div>
+        
+      </div>
+
+
+
+
+
+
+    
+      <div class="categoryScreen">
+        <div class="categoryScreen-bg"></div>
+
+
+            <div class="categoryScreenHeader">
+
+              <img src="backIcon.png" width="42px;" height="38px" style="cursor:pointer;" id="backBtnCatpage">
+              <img src="menuVertical.png" width="42px;" height="38px" style="cursor:pointer; visibility: hidden;">
+
+            </div>
+
+
+
+          <div class="catScreenHeadContent">
+              <img src="images/boy.png" class="categoryImage">
+
+              <div>
+                <h1 class="categoryTitle">Personal</h1>
+                <p class="categoryTasks">8 tasks</p>
+                
+              </div>
+          </div>
+
+
+
+
+
+        <div class="categoryScreenTasksSec">
+
+
+
+          <div class="actualTask">
+
+            <div class="taskFormatting">
+              <input type="checkbox" name="task" id="task" class="checkBox"/>
+
+              <label for="task" class="task">
+                <p style="font-size:18px;"></p>
+              </label>
+            </div>
+
+              <img src="deleteIcon.png"style="cursor:pointer; width: 30px;" class="deleteBtn">
+
+
+            
+          </div>
+
+
+        </div>
+
+
+
+      </div>
+
+
+
+
+    
+        <img class="add-task-btn" src="addIcon.png" width="42px;" height="38px" style="cursor:pointer;">
+     
+
+
+      <!--Task Form-->
+
+
+
+      <div class="black-backdrop"></div>
+      <div class="addTaskSection">
+
+        <div class="addTaskSection-bg"></div>
+
+            <div class="input-group">
+              <label for="task-input"> Task </label>
+              <input type="text" id="task-input" required />
+            </div>
+
+
+            <div class="input-group">
+              <label for="category-select"> Category </label>
+              <select id="category-select">
+                <option value="personal">Personal</option>
+              </select>
+            </div>
+
+
+            <div class="btns">
+              <button class="cancel-btn">Cancel</button>
+              <button class="add-btn">Add</button>
+            </div>
+
+
+      </div>
+
+
+      <script src="newscript.js"></script>
+
+    </div>
+
+    
+  </body>
+</html>
