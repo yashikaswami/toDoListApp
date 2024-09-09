@@ -1,3 +1,4 @@
+
 @import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
 
 ::-webkit-scrollbar {
@@ -10,6 +11,7 @@
     box-sizing: border-box;
 }
 
+/* Body and mainbox styles */
 body {
     min-height: 100vh;
     display: flex;
@@ -22,33 +24,47 @@ body {
 
 .mainbox {
     position: relative;
-    height: 100vh;
-    width: 100%;
+  
     overflow: hidden;
     padding: 30px 0;
     display: flex;
 }
 
-@media (min-width:768px) {
+/* Responsive design adjustments */
+@media (min-width: 768px) {
     .mainbox {
-        height: 50rem;
-        width: 25rem;
+        height: 100vh;
+        width: 100%;
         border-radius: 40px;
         border: 10px solid #2e2e2e;
     }
 }
 
+@media (max-width: 767px) {
+    .mainbox {
+        height: 100vh; /* Ensure it fills the viewport height on mobile */
+        width: 100%;   /* Full width on mobile */
+        padding: 0;    /* Adjust padding for better fit */
+        border: none;  /* Remove border if needed */
+    }
 
+    .homescreen-bg, .categoryScreen-bg {
+        width: 100%;
+        height: 20rem;
+    }
 
+    .categoriesSection, .categoryScreenTasksSec {
+        height: calc(100% - 5rem); /* Adjust based on header/footer height */
+        overflow-y: auto; /* Ensure scrolling for overflow */
+    }
+}
 
-
-
+/* Home Screen styles */
 .homeScreen {
     min-width: 100%;
     flex: 1;
     display: block;
 }
-
 
 .homescreen-bg {
     width: 135%;
@@ -74,8 +90,6 @@ body {
     color: #ffffff;
 }
 
-
-
 .categoriesSection {
     padding-top: 1rem;
     display: flex;
@@ -86,7 +100,6 @@ body {
     height: calc(100% - 8rem);
     padding-bottom: 20px;
     overflow: auto;
- 
 }
 
 .category {
@@ -112,20 +125,13 @@ body {
     align-items: center;
 }
 
-
-
-/* Category Screen */
-
-.categoryScreen{
+/* Category Screen styles */
+.categoryScreen {
     width: 130%;
     padding: 0 5px;
     opacity: 1;
     display: block;
-
 }
-
-
-
 
 .categoryScreen .categoryScreenHeader {
     display: flex;
@@ -133,8 +139,6 @@ body {
     align-items: center;
     margin: 0 20px;
 }
-
-
 
 .categoryScreen-bg {
     width: 135%;
@@ -148,8 +152,6 @@ body {
     z-index: -1;
     transition: all 0.3s;
 }
-
-
 
 .catScreenHeadContent {
     padding: 0 30px;
@@ -167,38 +169,22 @@ body {
     opacity: 0.6;
 }
 
-
-
-
-
-
-.noTask{
+/* No Task message */
+.noTask {
     margin-top: 50px;
     text-align: center;
     font-size: 24px;
     opacity: 0.7;
 }
 
-
-
-
-
-
-
-
-/* tasks */
+/* Tasks */
 .categoryScreenTasksSec {
     padding: 0 30px;
     margin-top: 1rem;
     height: calc(100% - 12rem);
     padding-bottom: 20px;
     overflow: auto;
-
 }
-
-
-
-
 
 .actualTask {
     display: flex;
@@ -214,8 +200,6 @@ body {
     cursor: pointer;
 }
 
-
-
 input[type="checkbox"] {
     appearance: none;
     width: 18px;
@@ -229,20 +213,16 @@ input[type="checkbox"] {
 input[type="checkbox"]:checked {
     background-color: #39a6f0;
     border-color: #39a6f0;
-
 }
 
-label{
+label {
     cursor: pointer;
 }
-input[type="checkbox"]:checked + label{
+
+input[type="checkbox"]:checked + label {
     text-decoration: line-through;
     cursor: pointer;
-
 }
-
-
-
 
 .deleteBtn {
     opacity: 0;
@@ -263,9 +243,7 @@ input[type="checkbox"]:checked + label{
     border-radius: 50%;
 }
 
-
-
-/* Add Task */
+/* Add Task button */
 .add-task-btn {
     position: absolute;
     bottom: 1rem;
@@ -285,13 +263,11 @@ input[type="checkbox"]:checked + label{
     transform: scale(1.1);
 }
 
-
 .add-task-btn:checked {
     position: absolute;
     bottom: 20rem;
     transform: rotate(45deg);
     transition: all 0.4s;
-
 }
 
 .black-backdrop {
@@ -304,14 +280,13 @@ input[type="checkbox"]:checked + label{
     transition: all 0.3s;
     /* Additional styles for appearance, e.g., border-radius */
     display: none;
-  }
-  
-  .black-backdrop.active {
+}
+
+.black-backdrop.active {
     opacity: 1; /* Ensure full opacity when active */
-  }
+}
 
-
-.addTaskSection{
+.addTaskSection {
     position: absolute;
     left: 0;
     width: 100%;
@@ -321,7 +296,6 @@ input[type="checkbox"]:checked + label{
     display: none;
     z-index: 3;
 }
-
 
 .addTaskSection-bg {
     position: absolute;
@@ -333,7 +307,6 @@ input[type="checkbox"]:checked + label{
     border-radius: 50% 50% 0 0;
     background-color: #39a6f0;
 }
-
 
 .input-group {
     position: relative;
@@ -364,7 +337,6 @@ input[type="checkbox"]:checked + label{
     margin-bottom: 5px;
 }
 
-
 .addTaskSection option {
     font-size: 24px;
     background-color: #8cc5eb;
@@ -378,16 +350,15 @@ input[type="checkbox"]:checked + label{
     font-weight: bold;
     text-align: center;
     transition: background-color 0.2s ease-in-out;
-  
-    &:hover {
-      background-color: #66b3ff;
-    }
-  
-    &:active {
-      transform: scale(0.95);
-    }
-  }
+}
 
+.addTaskSection option:hover {
+    background-color: #66b3ff;
+}
+
+.addTaskSection option:active {
+    transform: scale(0.95);
+}
 
 .btns {
     display: flex;
@@ -409,6 +380,5 @@ input[type="checkbox"]:checked + label{
 
 button.add-btn {
     background-color: #39a6f0;
-    color: #fff
+    color: #fff;
 }
-
